@@ -7,7 +7,7 @@
 
 ## Toolchain
 
-```shell
+``` shell
 # install go
 go version
 
@@ -16,7 +16,7 @@ ignite version
 # v28.3.0
 
 apt install -y protobuf-compiler
-protoc --version
+protobuf --version
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc
 go install github.com/cosmos/cosmos-proto/cmd/protoc-gen-go-pulsar
 ```
@@ -27,7 +27,7 @@ go install github.com/cosmos/cosmos-proto/cmd/protoc-gen-go-pulsar
                 ^  +-------------------------------+  ^
                 |  |                               |  |
                 |  |  State-machine = Application  |  |
-                |  |                               |  |   sunrise (built with Cosmos SDK)
+                |  |                               |  |   Sunrise (built with Cosmos SDK)
                 |  |            ^      +           |  |
                 |  +----------- | ABCI | ----------+  v
 Sunrise         |  |            +      v           |  ^
@@ -48,9 +48,9 @@ node            |  |                               |  |
 1. [Install Go](https://go.dev/doc/install) 1.22.2
 1. [Install Ignite CLI](https://docs.ignite.com/welcome/install) v28.3.0
 1. Clone this repo
-1. Install the sunrise CLI
+1. Install the Sunrise CLI
 
-   ```shell
+   ``` shell
    ignite chain build
    ```
 
@@ -62,19 +62,19 @@ If you'd rather not install from source, you can download a prebuilt binary from
 1. Download the binary for your platform (e.g. `sunrise_Linux_x86_64.tar.gz`) from the **Assets** section. Tip: if you're not sure what platform you're on, you can run `uname -a` and look for the operating system (e.g. `Linux`, `Darwin`) and architecture (e.g. `x86_64`, `arm64`).
 1. Extract the archive
 
-   ```shell
+   ``` shell
    tar -xvf sunrise_Linux_x86_64.tar.gz
    ```
 
 1. Verify the extracted binary works
 
-   ```shell
+   ``` shell
    ./sunrised --help
    ```
 
-1. [Optional] verify the prebuilt binary checksum. Download `checksums.txt` and then verify the checksum:
+1. [Optional] Verify the prebuilt binary checksum. Download `checksums.txt` and then verify the checksum:
 
-   ```shell
+   ``` shell
    sha256sum --ignore-missing --check checksums.txt
    ```
 
@@ -90,7 +90,7 @@ See <https://docs.sunriselayer.io/node/build-node> for more information.
 
 ```sh
 # Print help
-sunrised --help
+sunrise --help
 ```
 
 ### Environment variables
@@ -106,7 +106,7 @@ sunrised --help
 ./scripts/single-node.sh
 
 # Publish blob data to the local devnet
-sunrised tx blob pay-for-blob 0x00010203040506070809 0x48656c6c6f2c20576f726c6421 \
+sunrise tx blob pay-for-blob 0x00010203040506070809 0x48656c6c6f2c20576f726c6421 \
 	--chain-id private \
 	--from validator \
 	--keyring-backend test \
@@ -119,7 +119,7 @@ sunrised tx blob pay-for-blob 0x00010203040506070809 0x48656c6c6f2c20576f726c642
 
 ## Contributing
 
-This repo attempts to conform to [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) so PR titles should ideally start with `fix:`, `feat:`, `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:`, or `test:` because this helps with semantic versioning and changelog generation. It is especially important to include an `!` (e.g. `feat!:`) if the PR includes a breaking change.
+This repo attempts to conform to [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) so PR titles should ideally start with `fix:`, `feat:`, `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:`, or `test:` because this helps with semantic versioning and changelog generation. Including an `!` (e.g. `feat!:`) is especially important if the PR includes a breaking change.
 
 <!-- This repo contains multiple go modules. When using it, rename `go.work.example` to `go.work` and run `go work sync`. -->
 
@@ -145,7 +145,7 @@ ignite chain build
 ignite generate proto-go
 
 # Regenerate OpenAPI spec file (this assumes Docker is running)
-ignite generate openapi
+ignite generate open API
 
 # Generate TypeScript frontend client files (this assumes Docker is running)
 ignite generate ts-client
